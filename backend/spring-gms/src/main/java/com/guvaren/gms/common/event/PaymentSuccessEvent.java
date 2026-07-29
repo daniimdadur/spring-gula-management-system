@@ -1,6 +1,6 @@
 package com.guvaren.gms.common.event;
 
-import com.guvaren.gms.payment.entity.PaymentMethod;
+import com.guvaren.gms.master.payment.entity.PaymentMethod;
 import lombok.*;
 import java.math.BigDecimal;
 import java.time.Instant;

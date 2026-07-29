@@ -7,7 +7,7 @@ spring:
     password: P@ssW0rd32!
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQLDialect
@@ -29,6 +29,11 @@ spring:
       compose:
         readiness:
           timeout: 10s
+app:
+  jwt:
+    access-secret: ${JWT_ACCESS_SECRET:wdgFBVS9P2joCLJ3eNmknbg3IXlkZBpMOgdpriotWH0=}
+    access-expiration: 15
+    refresh-expiration: 1440
 springdoc:
   swagger-ui:
     path: /swagger-ui.html

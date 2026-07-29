@@ -1,7 +1,7 @@
 package com.guvaren.gms.common.event;
 
-import com.guvaren.gms.inventory.entity.MovementType;
-import com.guvaren.gms.inventory.entity.ReferenceType;
+import com.guvaren.gms.master.inventory.entity.MovementType;
+import com.guvaren.gms.master.inventory.entity.ReferenceType;
 import lombok.*;
 import java.time.Instant;
 import java.util.UUID;

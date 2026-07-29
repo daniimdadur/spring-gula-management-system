@@ -1,4 +1,0 @@
-/**
- * Service layer for Customer module.
- */
-package com.guvaren.gms.customer.service;
