@@ -15,13 +15,19 @@ public class OpenApiConfig {
     @Bean
     public OpenAPI customOpenAPI() {
         final String securitySchemeName = "bearerAuth";
+        final String refreshTokenCookie = "refreshTokenCookie";
         return new OpenAPI()
                 .components(new Components()
                         .addSecuritySchemes(securitySchemeName, new SecurityScheme()
                                 .name(securitySchemeName)
                                 .type(SecurityScheme.Type.HTTP)
                                 .scheme("bearer")
-                                .bearerFormat("JWT")))
+                                .bearerFormat("JWT"))
+                        .addSecuritySchemes(refreshTokenCookie, new SecurityScheme()
+                                .type(SecurityScheme.Type.APIKEY)
+                                .in(SecurityScheme.In.COOKIE)
+                                .name("refresh_token") // Nama cookie refresh token Anda
+                                .description("Cookie yang berisi Refresh Token")))
                 .addSecurityItem(new SecurityRequirement().addList(securitySchemeName))
                 .info(new Info()
                         .title("API spring-gms")

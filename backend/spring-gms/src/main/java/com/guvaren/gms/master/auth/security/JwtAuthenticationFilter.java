@@ -41,7 +41,9 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         String jwt = extractJwtFromRequest(request);
         try {
             if (jwt == null) {
-                throw new JwtException("JWT cannot be null or empty");
+                //throw new JwtException("JWT cannot be null or empty");
+                filterChain.doFilter(request, response);
+                return;
             }
 
             if (!isAlreadyAuthenticated()) {
